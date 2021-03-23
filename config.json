@@ -1,0 +1,9 @@
+{
+  "language": "",
+  "main": "./contracts/DemandFactory.sol",
+  "deploy": "./build/contracts/DemandFactory.json",
+  "compilers": {
+    "cfxtruffle": "0.0.8",
+    "solc": "0.6.12"
+  }
+}
