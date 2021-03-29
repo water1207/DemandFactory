@@ -9,21 +9,6 @@
 ### ABI:
 
 ```json
-
-// SPDX-License-Identifier: GPL-3.0
-pragma solidity >=0.5.0 <0.7.0;
-pragma experimental ABIEncoderV2;
-//contract token { function transfer(address receiver, uint amount) public { receiver; amount; } }
-
-contract DemandFactory {
-  address public admin;
-  uint public index;
-  //token public coin;
-
-
-name	code hash / address	
-DemandFactory
-0x2ec01961070f5f249cde59970c20ef1b0eabf46b7efc419aebbc099de73bf8a4	
 [
   {
     "inputs": [],
