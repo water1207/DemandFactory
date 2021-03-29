@@ -32,15 +32,15 @@ contract DemandFactory {
   Demand[] public demands;
 
   function createDemand(string memory _username, string memory _content, string memory _contact) public  {
-    index++;
     demands.push(Demand(index, _username, msg.sender, _content, _contact, 0));
     emit NewDemand(index, _username, msg.sender, _content, _contact, 0);
+    index++;
   }
   
   function getDemands(uint index)   //获取所有需求 局部测试 忽略他
         public view
         returns (string[] memory,uint[] memory)
-    {
+  {
         string[] memory name = new string[](index);
         uint[] memory status = new uint[](index);
         
@@ -51,10 +51,17 @@ contract DemandFactory {
         }
         
         return (name, status);
-    }
+  }
 
-  function update(uint index) public {    //更新状态
+  
+
+  function update(uint index) public {    //更新状态 0:初始 1：通过 2：捐赠中 3：捐赠完成 4：失败
     demands[index].status ++;
+    emit Update(index, demands[index].status);
+  }
+
+  function rollback(uint index) public {      //测试用 可以使需求状态回到前一个位置
+    demands[index].status --;
     emit Update(index, demands[index].status);
   }
 
